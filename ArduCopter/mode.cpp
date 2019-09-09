@@ -64,6 +64,12 @@ Mode *Copter::mode_from_mode_num(const uint8_t mode)
             ret = &mode_loiter;
             break;
 #endif
+            
+#if MODE_SIDEFLOW_ENABLED == ENABLED
+        case SIDEFLOW:
+            ret = &mode_sideflow;
+            break;
+#endif
 
 #if MODE_GUIDED_ENABLED == ENABLED
         case GUIDED:
